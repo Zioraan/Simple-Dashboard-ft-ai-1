@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influencer Performance Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css" />
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-slate-100 text-slate-900 antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:font-semibold">Skip to main content</a>
+
+    <header class="border-b border-slate-200 bg-white/95 backdrop-blur lg:hidden">
+      <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Creator View</p>
+        <h1 class="mt-1 text-xl font-bold tracking-tight">Influencer Revenue Dashboard</h1>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-6 lg:px-6 lg:py-6">
+      <aside aria-label="Dashboard sidebar" class="hidden rounded-3xl border border-slate-200 bg-white p-6 lg:sticky lg:top-6 lg:block lg:h-fit">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Creator View</p>
+        <h1 class="mt-2 text-xl font-bold tracking-tight">Influencer Revenue Dashboard</h1>
+        <p class="mt-2 text-sm text-slate-600">Static reporting. Commission is fixed at 15% of gross sales.</p>
+
+        <nav aria-label="Primary" class="mt-6">
+          <ul class="space-y-2 text-sm font-medium">
+            <li><a href="#kpi" class="block rounded-lg bg-slate-100 px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">Top Block: KPI</a></li>
+            <li><a href="#drivers" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">Middle Block: Drivers</a></li>
+            <li><a href="#operations" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">Bottom Block: Operational</a></li>
+          </ul>
+        </nav>
+
+        <section class="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+          <h2 class="text-sm font-semibold text-emerald-900">Products</h2>
+          <ul class="mt-2 space-y-1 text-sm text-emerald-800">
+            <li>Product A: $50</li>
+            <li>Product B: $120</li>
+            <li>Product C: $80</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main id="main-content" tabindex="-1" class="w-full min-w-0 space-y-6 px-3 py-6 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 lg:px-0 lg:py-0 lg:pb-0">
+        <section id="kpi" aria-labelledby="kpi-heading" class="min-w-0 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+          <header class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Top Block</p>
+              <h2 id="kpi-heading" class="text-2xl font-semibold tracking-tight">Main Outcome Indicators</h2>
+            </div>
+            <p class="text-sm text-slate-500">Commission formula: gross sales x 15%</p>
+          </header>
+
+          <ul class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Sales Volume</h3><p class="mt-2 text-2xl font-bold">550</p><p class="text-xs text-slate-500">Total completed sales</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Sign-ups</h3><p class="mt-2 text-2xl font-bold">8,400</p><p class="text-xs text-slate-500">Campaign-period sign-ups</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Active Users</h3><p class="mt-2 text-2xl font-bold">6,200</p><p class="text-xs text-slate-500">Active in last 30 days</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Impressions</h3><p class="mt-2 text-2xl font-bold">1.2M</p><p class="text-xs text-slate-500">Across paid and organic</p></li>
+
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Gross Sales Revenue</h3><p class="mt-2 text-2xl font-bold">$42,000</p><p class="text-xs text-slate-500">From all products</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Commission Revenue</h3><p class="mt-2 text-2xl font-bold">$6,300</p><p class="text-xs text-slate-500">15% of gross sales</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600"><abbr title="Monthly Recurring Revenue">MRR</abbr></h3><p class="mt-2 text-2xl font-bold">$7,900</p><p class="text-xs text-slate-500">Subscription baseline</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Avg. Selling Price</h3><p class="mt-2 text-2xl font-bold">$76.36</p><p class="text-xs text-slate-500">$42,000 / 550 sales</p></li>
+
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Engagement Rate</h3><p class="mt-2 text-2xl font-bold">6.43%</p><p class="text-xs text-slate-500">Weighted by platform reach</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Total Interactions</h3><p class="mt-2 text-2xl font-bold">17,350</p><p class="text-xs text-slate-500">Likes, comments, shares, saves</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Conversion Rate</h3><p class="mt-2 text-2xl font-bold">1.12%</p><p class="text-xs text-slate-500">3,020 / 270,000 reach</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Total Conversions</h3><p class="mt-2 text-2xl font-bold">3,020</p><p class="text-xs text-slate-500">All channels combined</p></li>
+
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600"><abbr title="Click-through Rate">CTR</abbr></h3><p class="mt-2 text-2xl font-bold">2.85%</p><p class="text-xs text-slate-500">Clicks / impressions</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Churn Rate</h3><p class="mt-2 text-2xl font-bold">3.2%</p><p class="text-xs text-slate-500">Subscription churn</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Persistence Rate</h3><p class="mt-2 text-2xl font-bold">84%</p><p class="text-xs text-slate-500">Users retained in flow</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Completion Rate</h3><p class="mt-2 text-2xl font-bold">78%</p><p class="text-xs text-slate-500">Checkout/subscription process</p></li>
+
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600"><abbr title="Net Promoter Score">NPS</abbr></h3><p class="mt-2 text-2xl font-bold">47</p><p class="text-xs text-slate-500">Loyalty score</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600"><abbr title="Customer Satisfaction">CSAT</abbr></h3><p class="mt-2 text-2xl font-bold">89%</p><p class="text-xs text-slate-500">Satisfaction score</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Cost per Outcome</h3><p class="mt-2 text-2xl font-bold">$3.61</p><p class="text-xs text-slate-500">$10,900 / 3,020 conversions</p></li>
+            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="text-sm font-medium text-slate-600">Margin</h3><p class="mt-2 text-2xl font-bold">74.0%</p><p class="text-xs text-slate-500">(42,000 - 10,900) / 42,000</p></li>
+          </ul>
+
+          <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-medium text-slate-700">Lead Time</h3>
+            <p class="mt-1 text-xl font-semibold">3.8 days average from click to conversion</p>
+          </div>
+        </section>
+
+        <section id="drivers" aria-labelledby="drivers-heading" class="min-w-0 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+          <header>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Middle Block</p>
+            <h2 id="drivers-heading" class="text-2xl font-semibold tracking-tight">Drivers: What Explains Performance</h2>
+            <p class="mt-1 text-sm text-slate-500">Funnel, platform quality, product mix, activity output, and engagement interactions.</p>
+          </header>
+
+          <div class="mt-6 grid gap-6 xl:grid-cols-2">
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Conversion by Stage (Funnel)</h3>
+              <div class="mt-4 overflow-x-auto" role="region" aria-label="Conversion by stage table" tabindex="0">
+                <table class="min-w-full border-collapse text-sm">
+                  <caption class="sr-only">Funnel stages and conversion between stages</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
+                      <th scope="col" class="px-2 py-2">Stage</th><th scope="col" class="px-2 py-2">Users</th><th scope="col" class="px-2 py-2">Stage Conversion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Reach</th><td class="px-2 py-2">270,000</td><td class="px-2 py-2">-</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Clicks</th><td class="px-2 py-2">34,200</td><td class="px-2 py-2">12.67%</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Landing View</th><td class="px-2 py-2">20,300</td><td class="px-2 py-2">59.36%</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Checkout Start</th><td class="px-2 py-2">8,400</td><td class="px-2 py-2">41.38%</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">Purchase</th><td class="px-2 py-2">3,020</td><td class="px-2 py-2">35.95%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Performance by Platform</h3>
+              <p id="platform-chart-help" class="mt-1 text-xs text-slate-500">Revenue/Cost identifies return quality by channel.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="ROI by platform chart" tabindex="0">
+                <table class="charts-css column show-labels data-spacing-8 h-56 min-w-[20rem] sm:min-w-[26rem]" aria-label="ROI by platform" aria-describedby="platform-chart-help">
+                  <caption class="sr-only">ROI comparison for Instagram TikTok and YouTube</caption>
+                  <tbody>
+                    <tr><th scope="row">Instagram</th><td style="--size: 0.82"><span class="data">3.60x</span></td></tr>
+                    <tr><th scope="row">TikTok</th><td style="--size: 0.83"><span class="data">3.65x</span></td></tr>
+                    <tr><th scope="row">YouTube</th><td style="--size: 1"><span class="data">4.39x</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Quality Metrics</h3>
+              <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-3"><p class="text-xs text-slate-500">Qualified Lead Ratio</p><p class="mt-1 text-xl font-semibold">68%</p></div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-3"><p class="text-xs text-slate-500">Attendance Rate</p><p class="mt-1 text-xl font-semibold">74%</p></div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-3"><p class="text-xs text-slate-500">Pass Rate</p><p class="mt-1 text-xl font-semibold">62%</p></div>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Performance by Product</h3>
+              <p id="product-chart-help" class="mt-1 text-xs text-slate-500">Which products generate more commission and better conversion.</p>
+              <div class="mt-4 overflow-x-auto" role="region" aria-label="Commission by product chart" tabindex="0">
+                <table class="charts-css column show-labels data-spacing-8 h-56 min-w-[18rem] sm:min-w-[22rem]" aria-label="Commission by product" aria-describedby="product-chart-help">
+                  <caption class="sr-only">Commission comparison across products</caption>
+                  <tbody>
+                    <tr><th scope="row">Product A</th><td style="--size: 0.77"><span class="data">$1,800</span></td></tr>
+                    <tr><th scope="row">Product B</th><td style="--size: 1"><span class="data">$2,340</span></td></tr>
+                    <tr><th scope="row">Product C</th><td style="--size: 0.92"><span class="data">$2,160</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4 xl:col-span-2">
+              <h3 class="text-base font-semibold">Activity by Platform</h3>
+              <p id="activity-table-help" class="sr-only">Scroll horizontally to access all columns in this table.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="Activity by platform table" aria-describedby="activity-table-help" tabindex="0">
+                <table class="min-w-full border-collapse text-sm whitespace-nowrap">
+                  <caption class="sr-only">Posts stories reels and videos by platform</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500"><th scope="col" class="px-2 py-2">Platform</th><th scope="col" class="px-2 py-2">Posts</th><th scope="col" class="px-2 py-2">Stories</th><th scope="col" class="px-2 py-2">Reels</th><th scope="col" class="px-2 py-2">Videos</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Instagram</th><td class="px-2 py-2">32</td><td class="px-2 py-2">96</td><td class="px-2 py-2">24</td><td class="px-2 py-2">8</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">TikTok</th><td class="px-2 py-2">18</td><td class="px-2 py-2">0</td><td class="px-2 py-2">46</td><td class="px-2 py-2">46</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">YouTube</th><td class="px-2 py-2">8</td><td class="px-2 py-2">12</td><td class="px-2 py-2">14</td><td class="px-2 py-2">22</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4 xl:col-span-2">
+              <h3 class="text-base font-semibold">Engagement by Platform</h3>
+              <p id="engagement-table-help" class="sr-only">Scroll horizontally to access all columns in this table.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="Engagement by platform table" aria-describedby="engagement-table-help" tabindex="0">
+                <table class="min-w-full border-collapse text-sm whitespace-nowrap">
+                  <caption class="sr-only">Likes comments shares and saves by platform</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500"><th scope="col" class="px-2 py-2">Platform</th><th scope="col" class="px-2 py-2">Likes</th><th scope="col" class="px-2 py-2">Comments</th><th scope="col" class="px-2 py-2">Shares</th><th scope="col" class="px-2 py-2">Saves</th><th scope="col" class="px-2 py-2">Total Interactions</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Instagram</th><td class="px-2 py-2">4,100</td><td class="px-2 py-2">840</td><td class="px-2 py-2">470</td><td class="px-2 py-2">390</td><td class="px-2 py-2">5,800</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">TikTok</th><td class="px-2 py-2">5,000</td><td class="px-2 py-2">1,150</td><td class="px-2 py-2">710</td><td class="px-2 py-2">240</td><td class="px-2 py-2">7,100</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">YouTube</th><td class="px-2 py-2">3,200</td><td class="px-2 py-2">660</td><td class="px-2 py-2">420</td><td class="px-2 py-2">170</td><td class="px-2 py-2">4,450</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="operations" aria-labelledby="operations-heading" class="min-w-0 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+          <header>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Bottom Block</p>
+            <h2 id="operations-heading" class="text-2xl font-semibold tracking-tight">Operational Details</h2>
+            <p class="mt-1 text-sm text-slate-500">Tables, anomalies, and static ranked lists for quick follow-up.</p>
+          </header>
+
+          <div class="mt-6 space-y-6">
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Products Table</h3>
+              <p id="products-table-help" class="sr-only">Scroll horizontally to access all columns in this table.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="Products table" aria-describedby="products-table-help" tabindex="0">
+                <table class="w-max min-w-full border-collapse text-sm whitespace-nowrap">
+                  <caption class="sr-only">Products with price commission conversions and ROI</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500"><th scope="col" class="px-2 py-2">Product</th><th scope="col" class="px-2 py-2">Price</th><th scope="col" class="px-2 py-2">Conversions</th><th scope="col" class="px-2 py-2">Gross Revenue</th><th scope="col" class="px-2 py-2">Commission (15%)</th><th scope="col" class="px-2 py-2">ROI</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Product A</th><td class="px-2 py-2">$50</td><td class="px-2 py-2">240</td><td class="px-2 py-2">$12,000</td><td class="px-2 py-2">$1,800</td><td class="px-2 py-2">3.25x</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Product B</th><td class="px-2 py-2">$120</td><td class="px-2 py-2">130</td><td class="px-2 py-2">$15,600</td><td class="px-2 py-2">$2,340</td><td class="px-2 py-2">4.02x</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">Product C</th><td class="px-2 py-2">$80</td><td class="px-2 py-2">180</td><td class="px-2 py-2">$14,400</td><td class="px-2 py-2">$2,160</td><td class="px-2 py-2">3.88x</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Platforms Table</h3>
+              <p id="platforms-table-help" class="sr-only">Scroll horizontally to access all columns in this table.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="Platforms table" aria-describedby="platforms-table-help" tabindex="0">
+                <table class="w-max min-w-full border-collapse text-sm whitespace-nowrap">
+                  <caption class="sr-only">Reach engagement conversions and best platform by metric</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500"><th scope="col" class="px-2 py-2">Platform</th><th scope="col" class="px-2 py-2">Reach</th><th scope="col" class="px-2 py-2">Engagement Rate</th><th scope="col" class="px-2 py-2">Conversions</th><th scope="col" class="px-2 py-2">Best Metric</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Instagram</th><td class="px-2 py-2">100,000</td><td class="px-2 py-2">5.8%</td><td class="px-2 py-2">900</td><td class="px-2 py-2">Highest reach</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">TikTok</th><td class="px-2 py-2">90,000</td><td class="px-2 py-2">7.1%</td><td class="px-2 py-2">990</td><td class="px-2 py-2">Best engagement + conversions</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">YouTube</th><td class="px-2 py-2">80,000</td><td class="px-2 py-2">6.4%</td><td class="px-2 py-2">960</td><td class="px-2 py-2">Best ROI</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="min-w-0 rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Campaigns Table</h3>
+              <p id="campaigns-table-help" class="sr-only">Scroll horizontally to access all columns in this table.</p>
+              <div class="mt-4 overflow-x-auto pb-2" role="region" aria-label="Campaigns table" aria-describedby="campaigns-table-help" tabindex="0">
+                <table class="w-max min-w-full border-collapse text-sm whitespace-nowrap">
+                  <caption class="sr-only">Campaign dates products results and performance</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500"><th scope="col" class="px-2 py-2">Campaign</th><th scope="col" class="px-2 py-2">Dates</th><th scope="col" class="px-2 py-2">Products Promoted</th><th scope="col" class="px-2 py-2">Results</th><th scope="col" class="px-2 py-2">Performance</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Spring Launch Wave</th><td class="px-2 py-2">Mar 01 - Mar 15</td><td class="px-2 py-2">A, B</td><td class="px-2 py-2">$14,800 gross | $2,220 commission</td><td class="px-2 py-2">Strong volume</td></tr>
+                    <tr class="border-b border-slate-100"><th scope="row" class="px-2 py-2 font-medium">Mid-Month Creator Push</th><td class="px-2 py-2">Mar 16 - Mar 24</td><td class="px-2 py-2">B, C</td><td class="px-2 py-2">$16,700 gross | $2,505 commission</td><td class="px-2 py-2">Best ROI</td></tr>
+                    <tr><th scope="row" class="px-2 py-2 font-medium">Final Week Retargeting</th><td class="px-2 py-2">Mar 25 - Mar 31</td><td class="px-2 py-2">A, C</td><td class="px-2 py-2">$10,500 gross | $1,575 commission</td><td class="px-2 py-2">Higher conversion quality</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-amber-300 bg-amber-50 p-4">
+              <h3 class="text-base font-semibold text-amber-900">Alerts</h3>
+              <ul class="mt-3 space-y-2 text-sm text-amber-900">
+                <li class="rounded-lg bg-white/70 px-3 py-2">Sharp drop: Instagram conversion dipped from 1.2% to 0.9% in last week.</li>
+                <li class="rounded-lg bg-white/70 px-3 py-2">Spike: TikTok conversions increased 19% after creator collab reels.</li>
+                <li class="rounded-lg bg-white/70 px-3 py-2">Anomaly: Product A ROI under target despite high impressions.</li>
+              </ul>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 p-4">
+              <h3 class="text-base font-semibold">Ranked Lists and Static Filters</h3>
+              <p class="mt-1 text-sm text-slate-500">No-JS filter simulation through pre-sorted list modules.</p>
+              <div class="mt-4 grid gap-4 md:grid-cols-2">
+                <section class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                  <h4 class="text-sm font-semibold">Top Products</h4>
+                  <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm"><li>Product B - $2,340 commission</li><li>Product C - $2,160 commission</li><li>Product A - $1,800 commission</li></ol>
+                </section>
+                <section class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                  <h4 class="text-sm font-semibold">Top Platforms</h4>
+                  <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm"><li>YouTube - 4.39x ROI</li><li>TikTok - 7.1% engagement</li><li>Instagram - 100k reach</li></ol>
+                </section>
+                <section class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                  <h4 class="text-sm font-semibold">Top Campaigns</h4>
+                  <ol class="mt-2 list-decimal space-y-1 pl-5 text-sm"><li>Mid-Month Creator Push</li><li>Spring Launch Wave</li><li>Final Week Retargeting</li></ol>
+                </section>
+                <section class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                  <h4 class="text-sm font-semibold">Improvement Opportunities</h4>
+                  <ul class="mt-2 list-disc space-y-1 pl-5 text-sm"><li>Reduce Instagram CPC to improve cost per outcome.</li><li>Replicate TikTok creative style to improve CTR on YouTube Shorts.</li><li>Increase Product A checkout completion with tighter landing copy.</li></ul>
+                </section>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav
+      aria-label="Mobile primary navigation"
+      class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-6px_20px_rgba(15,23,42,0.08)] backdrop-blur lg:hidden"
+    >
+      <ul class="mx-auto grid max-w-md grid-cols-3 gap-2 text-xs font-semibold text-slate-700">
+        <li>
+          <a href="#kpi" class="block rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">KPI</a>
+        </li>
+        <li>
+          <a href="#drivers" class="block rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">Drivers</a>
+        </li>
+        <li>
+          <a href="#operations" class="block rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2">Operational</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
